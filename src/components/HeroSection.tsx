@@ -41,7 +41,7 @@ const HeroSection = () => {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed opacity-0 animate-fade-in-up stagger-4">
             Final year undergraduate at the University of Moratuwa, specializing in 
             <span className="text-primary"> embedded systems</span>, 
-            <span className="text-[#17cfbf]"> IoT</span>, and 
+            <span className="text-[#0284c5]"> IoT</span>, and 
             <span className="text-primary"> robotics</span>. 
             Building real hardware solutions with microcontrollers, sensors, and custom PCB designs.
           </p>
