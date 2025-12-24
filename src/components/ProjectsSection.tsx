@@ -1,4 +1,5 @@
 import ProjectCard from './ProjectCard';
+import AnimatedCard from './AnimatedCard';
 
 const ProjectsSection = () => {
   const projects = [
@@ -70,8 +71,10 @@ const ProjectsSection = () => {
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project) => (
-            <ProjectCard key={project.title} {...project} />
+          {projects.map((project, index) => (
+            <AnimatedCard key={project.title} delay={index * 80}>
+              <ProjectCard {...project} />
+            </AnimatedCard>
           ))}
         </div>
 
@@ -87,16 +90,15 @@ const ProjectsSection = () => {
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[1, 2, 3, 4].map((i) => (
-              <div
-                key={i}
-                className="aspect-square rounded-xl bg-card border border-border overflow-hidden group hover:border-primary/50 transition-all duration-300"
-              >
-                <div className="w-full h-full bg-gradient-to-br from-primary/5 to-accent/5 flex items-center justify-center">
-                  <span className="text-muted-foreground font-mono text-sm">
-                    PCB {i}
-                  </span>
+              <AnimatedCard key={i} delay={i * 100}>
+                <div className="aspect-square rounded-xl bg-card border border-border overflow-hidden group hover:border-primary/50 transition-all duration-300">
+                  <div className="w-full h-full bg-gradient-to-br from-primary/5 to-accent/5 flex items-center justify-center">
+                    <span className="text-muted-foreground font-mono text-sm">
+                      PCB {i}
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </AnimatedCard>
             ))}
           </div>
           <p className="text-sm text-muted-foreground mt-4 italic">
