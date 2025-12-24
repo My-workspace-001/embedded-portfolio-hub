@@ -1,4 +1,5 @@
 import { Code, Cpu, Wrench, Users } from 'lucide-react';
+import AnimatedCard from './AnimatedCard';
 
 const SkillsSection = () => {
   const skillCategories = [
@@ -66,60 +67,61 @@ const SkillsSection = () => {
         {/* Skills Grid */}
         <div className="grid md:grid-cols-2 gap-8">
           {skillCategories.map((category, categoryIndex) => (
-            <div
-              key={category.title}
-              className="p-6 rounded-xl bg-card border border-border hover:border-primary/40 transition-all duration-300"
-            >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <category.icon className="w-5 h-5 text-primary" />
-                </div>
-                <h3 className="font-mono font-bold text-foreground">{category.title}</h3>
-              </div>
-
-              <div className="space-y-4">
-                {category.skills.map((skill, skillIndex) => (
-                  <div key={skill.name}>
-                    <div className="flex justify-between items-center mb-1">
-                      <span className="text-sm font-mono text-muted-foreground">{skill.name}</span>
-                      <span className="text-xs font-mono text-primary">{skill.level}%</span>
-                    </div>
-                    <div className="h-2 bg-muted rounded-full overflow-hidden">
-                      <div
-                        className="h-full rounded-full transition-all duration-1000 ease-out"
-                        style={{
-                          width: `${skill.level}%`,
-                          background: `linear-gradient(90deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%)`,
-                          animationDelay: `${categoryIndex * 0.2 + skillIndex * 0.1}s`,
-                        }}
-                      />
-                    </div>
+            <AnimatedCard key={category.title} delay={categoryIndex * 100}>
+              <div className="p-6 rounded-xl bg-card border border-border hover:border-primary/40 transition-all duration-300 h-full">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                    <category.icon className="w-5 h-5 text-primary" />
                   </div>
-                ))}
+                  <h3 className="font-mono font-bold text-foreground">{category.title}</h3>
+                </div>
+
+                <div className="space-y-4">
+                  {category.skills.map((skill, skillIndex) => (
+                    <div key={skill.name}>
+                      <div className="flex justify-between items-center mb-1">
+                        <span className="text-sm font-mono text-muted-foreground">{skill.name}</span>
+                        <span className="text-xs font-mono text-primary">{skill.level}%</span>
+                      </div>
+                      <div className="h-2 bg-muted rounded-full overflow-hidden">
+                        <div
+                          className="h-full rounded-full transition-all duration-1000 ease-out"
+                          style={{
+                            width: `${skill.level}%`,
+                            background: `linear-gradient(90deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%)`,
+                            animationDelay: `${categoryIndex * 0.2 + skillIndex * 0.1}s`,
+                          }}
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
+            </AnimatedCard>
           ))}
         </div>
 
         {/* Additional Tech Tags */}
-        <div className="mt-12 text-center">
-          <h4 className="font-mono text-sm text-muted-foreground mb-6">
-            Also experienced with:
-          </h4>
-          <div className="flex flex-wrap justify-center gap-3">
-            {[
-              'MQTT', 'HTTPS', 'I2C', 'SPI', 'UART', 'Bluetooth', 
-              'LoRa', 'Git', 'Linux', 'Matlab', 'LTspice', 'EasyEDA'
-            ].map((tech) => (
-              <span
-                key={tech}
-                className="px-4 py-2 text-sm font-mono rounded-full bg-muted text-muted-foreground hover:bg-primary/10 hover:text-primary transition-colors cursor-default"
-              >
-                {tech}
-              </span>
-            ))}
+        <AnimatedCard delay={400}>
+          <div className="mt-12 text-center">
+            <h4 className="font-mono text-sm text-muted-foreground mb-6">
+              Also experienced with:
+            </h4>
+            <div className="flex flex-wrap justify-center gap-3">
+              {[
+                'MQTT', 'HTTPS', 'I2C', 'SPI', 'UART', 'Bluetooth', 
+                'LoRa', 'Git', 'Linux', 'Matlab', 'LTspice', 'EasyEDA'
+              ].map((tech) => (
+                <span
+                  key={tech}
+                  className="px-4 py-2 text-sm font-mono rounded-full bg-muted text-muted-foreground hover:bg-primary/10 hover:text-primary transition-colors cursor-default"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
+        </AnimatedCard>
       </div>
     </section>
   );
