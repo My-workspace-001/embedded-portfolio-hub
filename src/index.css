@@ -4,6 +4,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");
+
 /* 
   ELECTRONIC ENGINEER PORTFOLIO DESIGN SYSTEM
   Theme: Circuit Board / Embedded Systems Aesthetic
@@ -78,10 +82,18 @@
     /* Circuit trace animation */
     --circuit-color: hsl(175 80% 45% / 0.15);
     --circuit-glow: hsl(175 80% 45% / 0.4);
+    --shadow-sm: 0px 1px 1.5px 0px hsla(217, 78%, 82%, 0.13);
+    --shadow: 0px 1px 3px 0px hsla(217, 78%, 82%, 0.13);
+    --shadow-md: 0px 1px 4.5px 0px hsla(217, 78%, 82%, 0.13);
+    --shadow-lg: 0px 1px 7.5px 0px hsla(217, 78%, 82%, 0.13);
   }
 
   .dark {
     /* Same as root - dark theme by default */
+    --shadow-sm: 0px 1px 1.5px 0px hsla(217, 78%, 82%, 0.13);
+    --shadow: 0px 1px 3px 0px hsla(217, 78%, 82%, 0.13);
+    --shadow-md: 0px 1px 4.5px 0px hsla(217, 78%, 82%, 0.13);
+    --shadow-lg: 0px 1px 7.5px 0px hsla(217, 78%, 82%, 0.13)
   }
 }
 
