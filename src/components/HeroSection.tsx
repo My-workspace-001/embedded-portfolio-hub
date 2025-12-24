@@ -1,21 +1,20 @@
 import { Button } from './ui/button';
 import { ChevronDown, Github, Linkedin, Mail, FileText } from 'lucide-react';
-
 const HeroSection = () => {
   const scrollToProjects = () => {
     const element = document.querySelector('#projects');
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-hero-glow pointer-events-none" />
       
       <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center shadow rounded-md">
           {/* Terminal-style intro */}
           <div className="inline-block mb-6 opacity-0 animate-fade-in-up stagger-1">
             <span className="font-mono text-sm text-muted-foreground bg-muted/50 px-4 py-2 rounded-full border border-border">
@@ -63,34 +62,16 @@ const HeroSection = () => {
 
           {/* Social Links */}
           <div className="flex items-center justify-center gap-4 opacity-0 animate-fade-in-up stagger-6">
-            <a
-              href="https://github.com/RaveenPramuditha"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-full bg-muted/50 text-muted-foreground hover:text-primary hover:bg-muted transition-all duration-300 hover:shadow-[0_0_20px_hsl(var(--primary)/0.3)]"
-            >
+            <a href="https://github.com/RaveenPramuditha" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-muted/50 text-muted-foreground hover:text-primary hover:bg-muted transition-all duration-300 hover:shadow-[0_0_20px_hsl(var(--primary)/0.3)]">
               <Github className="w-5 h-5" />
             </a>
-            <a
-              href="https://linkedin.com/in/Raveen-Pramuditha"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-full bg-muted/50 text-muted-foreground hover:text-primary hover:bg-muted transition-all duration-300 hover:shadow-[0_0_20px_hsl(var(--primary)/0.3)]"
-            >
+            <a href="https://linkedin.com/in/Raveen-Pramuditha" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-muted/50 text-muted-foreground hover:text-primary hover:bg-muted transition-all duration-300 hover:shadow-[0_0_20px_hsl(var(--primary)/0.3)]">
               <Linkedin className="w-5 h-5" />
             </a>
-            <a
-              href="mailto:raveenpspathirana99@gmail.com"
-              className="p-3 rounded-full bg-muted/50 text-muted-foreground hover:text-primary hover:bg-muted transition-all duration-300 hover:shadow-[0_0_20px_hsl(var(--primary)/0.3)]"
-            >
+            <a href="mailto:raveenpspathirana99@gmail.com" className="p-3 rounded-full bg-muted/50 text-muted-foreground hover:text-primary hover:bg-muted transition-all duration-300 hover:shadow-[0_0_20px_hsl(var(--primary)/0.3)]">
               <Mail className="w-5 h-5" />
             </a>
-            <a
-              href="https://medium.com/@raveenpspathirana99"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-full bg-muted/50 text-muted-foreground hover:text-primary hover:bg-muted transition-all duration-300 hover:shadow-[0_0_20px_hsl(var(--primary)/0.3)]"
-            >
+            <a href="https://medium.com/@raveenpspathirana99" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-muted/50 text-muted-foreground hover:text-primary hover:bg-muted transition-all duration-300 hover:shadow-[0_0_20px_hsl(var(--primary)/0.3)]">
               <FileText className="w-5 h-5" />
             </a>
           </div>
@@ -106,8 +87,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
