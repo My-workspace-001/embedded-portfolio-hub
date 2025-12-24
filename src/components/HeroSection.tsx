@@ -61,7 +61,7 @@ const HeroSection = () => {
           </div>
 
           {/* Social Links */}
-          <div className="flex items-center justify-center gap-4 opacity-0 animate-fade-in-up stagger-6">
+          <div className="items-center justify-center opacity-0 animate-fade-in-up stagger-6 flex flex-row gap-[16px]">
             <a href="https://github.com/RaveenPramuditha" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-muted/50 text-muted-foreground hover:text-primary hover:bg-muted transition-all duration-300 hover:shadow-[0_0_20px_hsl(var(--primary)/0.3)]">
               <Github className="w-5 h-5" />
             </a>
