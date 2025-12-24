@@ -34,7 +34,7 @@ const AboutSection = () => {
             <div className="text-center space-y-6 mb-12">
               <p className="text-lg text-muted-foreground leading-relaxed">
                 I'm a passionate electronics engineer with a focus on building 
-                <span className="text-primary"> real-world hardware solutions</span>. 
+                <span className="text-[#0f1729]"> real-world hardware solutions</span>. 
                 Currently in my final year at the 
                 <span className="text-foreground font-medium"> University of Moratuwa</span>, 
                 Department of Electronic and Telecommunication Engineering.
@@ -43,7 +43,7 @@ const AboutSection = () => {
               <p className="text-lg text-muted-foreground leading-relaxed">
                 My expertise spans from low-level embedded firmware to complete IoT systems. 
                 I enjoy the challenge of integrating hardware and software to create 
-                <span className="text-accent"> efficient, reliable solutions</span> 
+                <span className="text-[#0f1729]"> efficient, reliable solutions</span> 
                 for real-world problems.
               </p>
 
