@@ -14,7 +14,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-hero-glow pointer-events-none" />
       
       <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="max-w-4xl mx-auto text-center shadow rounded-md">
+        <div className="max-w-4xl mx-auto text-center shadow rounded-md bg-inherit">
           {/* Terminal-style intro */}
           <div className="inline-block mb-6 opacity-0 animate-fade-in-up stagger-1">
             <span className="font-mono text-sm text-muted-foreground bg-muted/50 px-4 py-2 rounded-full border border-border">
@@ -32,7 +32,7 @@ const HeroSection = () => {
           <div className="mb-8 opacity-0 animate-fade-in-up stagger-3">
             <p className="text-xl sm:text-2xl md:text-3xl font-mono text-muted-foreground">
               <span className="text-primary">{'>'}</span> Embedded Systems
-              <span className="text-accent"> & </span>
+              <span className="text-secondary"> & </span>
               Robotics Engineer
             </p>
           </div>
@@ -41,7 +41,7 @@ const HeroSection = () => {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed opacity-0 animate-fade-in-up stagger-4">
             Final year undergraduate at the University of Moratuwa, specializing in 
             <span className="text-primary"> embedded systems</span>, 
-            <span className="text-accent"> IoT</span>, and 
+            <span className="text-secondary"> IoT</span>, and 
             <span className="text-primary"> robotics</span>. 
             Building real hardware solutions with microcontrollers, sensors, and custom PCB designs.
           </p>

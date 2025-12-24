@@ -1,32 +1,24 @@
 import { Cpu, CircuitBoard, Wifi, Code } from 'lucide-react';
 import AnimatedCard from './AnimatedCard';
-
 const AboutSection = () => {
-  const highlights = [
-    {
-      icon: Cpu,
-      title: 'Embedded Systems',
-      description: 'STM32, ESP32, Raspberry Pi, Arduino with hands-on firmware development',
-    },
-    {
-      icon: CircuitBoard,
-      title: 'PCB Design',
-      description: 'Altium Designer, EasyEDA for professional circuit board design',
-    },
-    {
-      icon: Wifi,
-      title: 'IoT & Networking',
-      description: 'LoRa, MQTT, HTTP/HTTPS protocols for connected devices',
-    },
-    {
-      icon: Code,
-      title: 'Software Dev',
-      description: 'C/C++, Python, FreeRTOS, Computer Vision with OpenCV',
-    },
-  ];
-
-  return (
-    <section id="about" className="py-24 relative">
+  const highlights = [{
+    icon: Cpu,
+    title: 'Embedded Systems',
+    description: 'STM32, ESP32, Raspberry Pi, Arduino with hands-on firmware development'
+  }, {
+    icon: CircuitBoard,
+    title: 'PCB Design',
+    description: 'Altium Designer, EasyEDA for professional circuit board design'
+  }, {
+    icon: Wifi,
+    title: 'IoT & Networking',
+    description: 'LoRa, MQTT, HTTP/HTTPS protocols for connected devices'
+  }, {
+    icon: Code,
+    title: 'Software Dev',
+    description: 'C/C++, Python, FreeRTOS, Computer Vision with OpenCV'
+  }];
+  return <section id="about" className="py-24 relative">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -68,7 +60,7 @@ const AboutSection = () => {
                   <div className="text-sm text-muted-foreground font-mono">GPA</div>
                 </div>
                 <div className="text-center p-4 rounded-lg bg-card border border-border">
-                  <div className="text-3xl font-bold text-accent mb-1">10+</div>
+                  <div className="text-3xl font-bold mb-1 text-[#0284c5]">10+</div>
                   <div className="text-sm text-muted-foreground font-mono">Projects</div>
                 </div>
                 <div className="text-center p-4 rounded-lg bg-card border border-border">
@@ -81,8 +73,7 @@ const AboutSection = () => {
 
           {/* Highlights Grid - Below text */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {highlights.map((item, index) => (
-              <AnimatedCard key={item.title} delay={index * 100}>
+            {highlights.map((item, index) => <AnimatedCard key={item.title} delay={index * 100}>
                 <div className="group p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--primary)/0.15)] h-full">
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                     <item.icon className="w-6 h-6 text-primary" />
@@ -94,13 +85,10 @@ const AboutSection = () => {
                     {item.description}
                   </p>
                 </div>
-              </AnimatedCard>
-            ))}
+              </AnimatedCard>)}
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AboutSection;
