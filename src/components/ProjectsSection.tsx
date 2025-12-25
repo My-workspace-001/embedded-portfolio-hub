@@ -1,7 +1,38 @@
 import ProjectCard from './ProjectCard';
 import AnimatedCard from './AnimatedCard';
+import { useState, useRef } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const ProjectsSection = () => {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  
+  const pcbDesigns = [
+    { id: 1, name: 'PCB 1' },
+    { id: 2, name: 'PCB 2' },
+    { id: 3, name: 'PCB 3' },
+    { id: 4, name: 'PCB 4' },
+    { id: 5, name: 'PCB 5' },
+    { id: 6, name: 'PCB 6' },
+  ];
+
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({
+        left: -400,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({
+        left: 400,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   const projects = [
     {
       title: 'Meshtastic Network Optimization',
@@ -116,32 +147,83 @@ const ProjectsSection = () => {
           ))}
         </div>
 
-        {/* PCB Gallery Placeholder */}
-        <div className="mt-16 text-center">
-          <h3 className="text-xl font-mono font-bold text-foreground mb-6">
-            <span className="text-primary">{'<'}</span>
-            PCB Designs
-            <span className="text-primary">{' />'}</span>
-          </h3>
-          <p className="text-muted-foreground mb-8">
-            Custom PCB designs created for various projects using Altium Designer
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[1, 2, 3, 4].map((i) => (
-              <AnimatedCard key={i} delay={i * 100}>
-                <div className="aspect-square rounded-xl bg-card border border-border overflow-hidden group hover:border-primary/50 transition-all duration-300">
-                  <div className="w-full h-full bg-gradient-to-br from-primary/5 to-accent/5 flex items-center justify-center">
-                    <span className="text-muted-foreground font-mono text-sm">
-                      PCB {i}
-                    </span>
-                  </div>
-                </div>
-              </AnimatedCard>
-            ))}
+        {/* PCB Gallery */}
+        <div className="mt-16">
+          <div className="text-center mb-8">
+            <h3 className="text-xl font-mono font-bold text-foreground mb-6">
+              <span className="text-primary">{'<'}</span>
+              PCB Designs
+              <span className="text-primary">{' />'}</span>
+            </h3>
+            <p className="text-muted-foreground mb-8">
+              Custom PCB designs created for various projects using Altium Designer
+            </p>
           </div>
-          <p className="text-sm text-muted-foreground mt-4 italic">
-            Add your PCB images to showcase your hardware designs
-          </p>
+
+          {/* Carousel Container */}
+          <div className="relative max-w-7xl mx-auto px-4">
+            {/* Navigation Buttons */}
+            <button
+              onClick={scrollLeft}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 -translate-x-2 md:-translate-x-4 bg-primary/90 hover:bg-primary text-primary-foreground rounded-full p-2 md:p-3 shadow-lg transition-all duration-300 hover:scale-110"
+              aria-label="Scroll Left"
+            >
+              <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
+            </button>
+
+            <button
+              onClick={scrollRight}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 translate-x-2 md:translate-x-4 bg-primary/90 hover:bg-primary text-primary-foreground rounded-full p-2 md:p-3 shadow-lg transition-all duration-300 hover:scale-110"
+              aria-label="Scroll Right"
+            >
+              <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
+            </button>
+
+            {/* Scrollable Container */}
+            <div
+              ref={scrollContainerRef}
+              className="overflow-x-auto scrollbar-hide pb-4"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              <div className="flex gap-4 md:gap-6">
+                {pcbDesigns.map((pcb, index) => (
+                  <div
+                    key={pcb.id}
+                    className="flex-shrink-0 w-64 md:w-72"
+                  >
+                    <div className="rounded-xl bg-card border border-border overflow-hidden hover:border-primary/50 transition-all duration-300 shadow-lg">
+                      {/* 2D PCB Design */}
+                      <div className="relative aspect-[4/3] border-b border-border overflow-hidden">
+                        <img 
+                          src={`/pcb${pcb.id}-pcb.webp`} 
+                          alt={`${pcb.name} 2D Design`}
+                          className="w-full h-full object-contain bg-gradient-to-br from-primary/5 to-accent/5 p-2"
+                        />
+                        <div className="absolute top-2 left-2 px-2 py-1 bg-primary/90 rounded text-xs font-mono text-primary-foreground backdrop-blur-sm">
+                          {pcb.name} - 2D
+                        </div>
+                      </div>
+                      {/* 3D View */}
+                      <div className="relative aspect-[4/3] overflow-hidden">
+                        <img 
+                          src={`/pcb${pcb.id}-3D.webp`} 
+                          alt={`${pcb.name} 3D View`}
+                          className="w-full h-full object-contain bg-gradient-to-br from-accent/5 to-primary/5 p-2"
+                        />
+                        <div className="absolute top-2 left-2 px-2 py-1 bg-accent/90 rounded text-xs font-mono text-accent-foreground backdrop-blur-sm">
+                          3D View
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* <p className="text-sm text-muted-foreground mt-6 text-center italic">
+            Scroll horizontally to view more PCB designs
+          </p> */}
         </div>
       </div>
     </section>
