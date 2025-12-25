@@ -36,7 +36,7 @@ const VolunteeringSection = () => {
       icon: Users,
       title: 'Robotics Workshop - Nexgen 1.0',
       organization: 'IEEE Robotic and Automation Society - University of Moratuwa',
-      description: 'Coducted a beginner-friendly workshop on building and programming basic robots using Arduino and obstacle avoiding robot.',
+      description: 'Coducted a beginner-friendly workshop on building and programming basic obstacle avoiding robot using Arduino.',
       type: 'Seminar',
       image: '/ws2.webp',
       // youtubeLink: 'https://youtube.com/watch?v=your-video-id',
