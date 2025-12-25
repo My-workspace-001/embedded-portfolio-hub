@@ -96,16 +96,16 @@ const VolunteeringSection = () => {
                       <activity.icon className="w-4 h-4 text-primary" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="flex flex-wrap items-center gap-1.5 mb-1">
-                        <h3 className="font-mono font-semibold text-sm text-foreground leading-tight">
+                      <div className="flex flex-wrap items-center gap-1.5 mb-1.5">
+                        <h3 className="font-mono font-semibold text-base text-foreground leading-tight">
                           {activity.title}
                         </h3>
-                        <span className="text-xs font-mono text-accent bg-accent/10 px-1.5 py-0.5 rounded">
+                        <span className="text-xs font-mono text-accent bg-accent/10 px-2 py-0.5 rounded">
                           {activity.type}
                         </span>
                       </div>
-                      <p className="text-xs text-primary mb-1 leading-tight">{activity.organization}</p>
-                      <p className="text-xs text-muted-foreground mb-1.5 leading-snug line-clamp-2">{activity.description}</p>
+                      <p className="text-sm text-primary mb-1.5 leading-tight">{activity.organization}</p>
+                      <p className="text-sm text-muted-foreground mb-2 leading-relaxed">{activity.description}</p>
                       
                       {/* YouTube Link */}
                       {activity.youtubeLink && (
@@ -113,11 +113,11 @@ const VolunteeringSection = () => {
                           href={activity.youtubeLink}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 text-xs font-mono text-red-600 hover:text-red-700 transition-colors"
+                          className="inline-flex items-center gap-1.5 text-sm font-mono text-red-600 hover:text-red-700 transition-colors"
                         >
-                          <Youtube className="w-3 h-3" />
+                          <Youtube className="w-3.5 h-3.5" />
                           Watch
-                          <ExternalLink className="w-2 h-2" />
+                          <ExternalLink className="w-2.5 h-2.5" />
                         </a>
                       )}
                     </div>
