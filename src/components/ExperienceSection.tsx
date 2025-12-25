@@ -1,4 +1,4 @@
-import { Briefcase, GraduationCap, Award } from 'lucide-react';
+import { Briefcase, GraduationCap } from 'lucide-react';
 import AnimatedCard from './AnimatedCard';
 
 const ExperienceSection = () => {
@@ -42,21 +42,13 @@ const ExperienceSection = () => {
     },
   ];
 
-  const awards = [
-    { title: 'Fifth Place - SLIIT Robofest 2024', description: 'Maze-solving micromouse robot using STM32' },
-    { title: 'Finalists - IESL Robogames 2024', description: 'Kobuki Robot with Computer Vision and ML' },
-    { title: 'Finalist - SLRC Robotic Challenge 2023', description: 'Computer vision based robot using Raspberry Pi' },
-    { title: 'Semi Finalist - SLIoT Challenge 2023', description: 'Adaptive traffic light system with OpenCV and ML' },
-    { title: 'Dean\'s List', description: 'Semester 1 and Semester 6' },
-  ];
-
   return (
     <section id="experience" className="py-24 relative bg-secondary/30">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="text-primary font-mono">03.</span> Experience & Education
+            <span className="text-primary font-mono">02.</span> Experience & Education
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full" />
         </div>
@@ -119,26 +111,6 @@ const ExperienceSection = () => {
                 </AnimatedCard>
               ))}
             </div>
-          </div>
-        </div>
-
-        {/* Awards Section */}
-        <div className="mt-16">
-          <h3 className="flex items-center justify-center gap-3 text-xl font-mono font-bold text-foreground mb-8">
-            <Award className="w-5 h-5 text-accent" />
-            Awards & Achievements
-          </h3>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {awards.map((award, index) => (
-              <AnimatedCard key={index} delay={index * 80}>
-                <div className="p-4 rounded-lg bg-card border border-border hover:border-accent/50 transition-all group h-full">
-                  <h4 className="font-mono font-semibold text-sm text-foreground group-hover:text-accent transition-colors mb-2">
-                    {award.title}
-                  </h4>
-                  <p className="text-xs text-muted-foreground">{award.description}</p>
-                </div>
-              </AnimatedCard>
-            ))}
           </div>
         </div>
       </div>
