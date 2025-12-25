@@ -7,12 +7,12 @@ const ProjectsSection = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   
   const pcbDesigns = [
-    { id: 1, name: 'PCB 1' },
-    { id: 2, name: 'PCB 2' },
-    { id: 3, name: 'PCB 3' },
-    { id: 4, name: 'PCB 4' },
-    { id: 5, name: 'PCB 5' },
-    { id: 6, name: 'PCB 6' },
+    { id: 1, name: 'ETMS-RoboticGen' },
+    { id: 2, name: '3D Scanner' },
+    { id: 3, name: 'RFID Inventory Management System' },
+    { id: 4, name: 'SIM7600 Breakout board' },
+    { id: 5, name: 'Analog Voltmeter' },
+    { id: 6, name: 'Presure Measuring Device' },
   ];
 
   const scrollLeft = () => {
@@ -200,7 +200,7 @@ const ProjectsSection = () => {
                           className="w-full h-full object-contain bg-gradient-to-br from-primary/5 to-accent/5 p-2"
                         />
                         <div className="absolute top-2 left-2 px-2 py-1 bg-primary/90 rounded text-xs font-mono text-primary-foreground backdrop-blur-sm">
-                          {pcb.name} - 2D
+                          {pcb.name}
                         </div>
                       </div>
                       {/* 3D View */}
