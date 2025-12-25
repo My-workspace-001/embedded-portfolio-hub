@@ -1,7 +1,27 @@
-import { Users, Lightbulb, Mic, Youtube, ExternalLink, Video } from 'lucide-react';
+import { Users, Lightbulb, Mic, Youtube, ExternalLink, Video, ChevronLeft, ChevronRight } from 'lucide-react';
 import AnimatedCard from './AnimatedCard';
+import { useRef } from 'react';
 
 const VolunteeringSection = () => {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({
+        left: -320,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({
+        left: 320,
+        behavior: 'smooth'
+      });
+    }
+  };
   const activities = [
     {
       icon: Users,
@@ -42,10 +62,34 @@ const VolunteeringSection = () => {
   ];
 
   const extraActivities = [
-    'Member of IEEE Student Branch, University of Moratuwa',
-    'Active contributor to open-source embedded systems projects',
-    'Technical blog writing on Medium covering embedded systems topics',
-    'Participation in hackathons and innovation challenges',
+    {
+      title: 'Excecutive Committee Member  Webmaster',
+      organization: 'IEEE Student Branch - University of Moratuwa',
+      period: '2024 - 2025',
+      image: '/ieeeexcom.webp',
+      description: 'Managing and maintaining the IEEE student branch website',
+    },
+    {
+      title: 'Volunteer Management Committee Lead',
+      organization: 'IEEE Robotic and Automation Society - University of Moratuwa',
+      period: '2023 - 2024',
+      image: '/ras1.webp',
+      description: 'Leading volunteer coordination for robotics events',
+    },
+    {
+      title: 'Logistic Lead',
+      organization: 'IEEE Student Branch - University of Moratuwa',
+      period: '2023 - 2024',
+      image: '/logistic.webp',
+      description: 'Coordinating logistics for student branch events',
+    },
+    {
+      title: 'Exmo 23 Organizing Committee',
+      organization: 'University of Moratuwa',
+      period: '2023',
+      image: '/exmo.webp',
+      description: 'Organizing committee member for Exmo exhibition',
+    },
   ];
 
   return (
@@ -128,27 +172,72 @@ const VolunteeringSection = () => {
           ))}
         </div>
 
-        {/* Extra Activities */}
-        <AnimatedCard delay={400}>
-          <div className="p-6 rounded-xl bg-card border border-border">
-            <h3 className="font-mono font-semibold text-foreground mb-4 text-center">
-              <span className="text-primary">{'<'}</span>
-              Extra Curricular
-              <span className="text-primary">{' />'}</span>
-            </h3>
-            <ul className="grid sm:grid-cols-2 gap-3">
-              {extraActivities.map((activity, index) => (
-                <li
-                  key={index}
-                  className="flex items-start gap-2 text-sm text-muted-foreground"
-                >
-                  <span className="text-primary mt-1">▹</span>
-                  {activity}
-                </li>
-              ))}
-            </ul>
+        {/* Extra Activities Carousel */}
+        <div className="mt-12">
+          <h3 className="font-mono font-semibold text-foreground mb-6 text-center text-xl">
+            <span className="text-primary">{'<'}</span>
+            Leadership & Volunteer Roles
+            <span className="text-primary">{' />'}</span>
+          </h3>
+          
+          {/* Carousel Container */}
+          <div className="relative max-w-6xl mx-auto">
+            {/* Navigation Buttons */}
+            <button
+              onClick={scrollLeft}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 -translate-x-2 md:-translate-x-4 bg-primary/90 hover:bg-primary text-primary-foreground rounded-full p-2 shadow-lg transition-all duration-300 hover:scale-110"
+              aria-label="Scroll Left"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+
+            <button
+              onClick={scrollRight}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 translate-x-2 md:translate-x-4 bg-primary/90 hover:bg-primary text-primary-foreground rounded-full p-2 shadow-lg transition-all duration-300 hover:scale-110"
+              aria-label="Scroll Right"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+
+            {/* Scrollable Container */}
+            <div
+              ref={scrollContainerRef}
+              className="overflow-x-auto scrollbar-hide pb-4"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              <div className="flex gap-4">
+                {extraActivities.map((activity, index) => (
+                  <div
+                    key={index}
+                    className="flex-shrink-0 w-72"
+                  >
+                    <div className="rounded-lg bg-card border border-border hover:border-primary/50 transition-all duration-300 shadow-lg overflow-hidden h-full">
+                      {/* Image */}
+                      <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-primary/5 to-accent/5">
+                        <img
+                          src={activity.image}
+                          alt={activity.title}
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                      
+                      {/* Content */}
+                      <div className="p-4 text-center">
+                        <h4 className="font-mono font-semibold text-base text-foreground mb-1.5">
+                          {activity.title}
+                        </h4>
+                        <p className="text-sm text-primary mb-1.5">{activity.organization}</p>
+                        <p className="text-sm font-mono text-accent bg-accent/10 px-2 py-1 rounded inline-block">
+                          {activity.period}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-        </AnimatedCard>
+        </div>
       </div>
     </section>
   );
