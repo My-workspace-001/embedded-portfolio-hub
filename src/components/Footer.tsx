@@ -1,4 +1,4 @@
-import { Heart, Terminal } from 'lucide-react';
+import { Terminal } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -14,9 +14,7 @@ const Footer = () => {
           {/* Copyright */}
           <p className="text-sm text-muted-foreground text-center font-mono">
             <span className="text-primary">{'<'}</span>
-            Built with 
-            <Heart className="w-4 h-4 inline mx-1 text-accent" />
-            by Raveen Pathirana
+            Built by Raveen Pathirana
             <span className="text-primary">{' />'}</span>
           </p>
 

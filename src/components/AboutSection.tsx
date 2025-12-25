@@ -62,22 +62,6 @@ const AboutSection = () => {
                 participating in robotics competitions, conducting workshops, or 
                 exploring new technologies in the maker community.
               </p>
-
-              {/* Quick Stats */}
-              <div className="grid grid-cols-3 gap-4 pt-6 max-w-md mx-auto">
-                <div className="text-center p-4 rounded-lg bg-card border border-border">
-                  <div className="text-3xl font-bold text-primary mb-1">3.71</div>
-                  <div className="text-sm text-muted-foreground font-mono">GPA</div>
-                </div>
-                <div className="text-center p-4 rounded-lg bg-card border border-border">
-                  <div className="text-3xl font-bold mb-1 text-[#0284c5]">10+</div>
-                  <div className="text-sm text-muted-foreground font-mono">Projects</div>
-                </div>
-                <div className="text-center p-4 rounded-lg bg-card border border-border">
-                  <div className="text-3xl font-bold text-primary mb-1">5+</div>
-                  <div className="text-sm text-muted-foreground font-mono">Awards</div>
-                </div>
-              </div>
             </div>
           </AnimatedCard>
 
