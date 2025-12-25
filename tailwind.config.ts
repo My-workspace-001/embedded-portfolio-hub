@@ -139,6 +139,17 @@ export default {
   				'50%': {
   					opacity: '1'
   				}
+  			},
+  			'gradient-border': {
+  				'0%': {
+  					backgroundPosition: '0% 50%'
+  				},
+  				'50%': {
+  					backgroundPosition: '100% 50%'
+  				},
+  				'100%': {
+  					backgroundPosition: '0% 50%'
+  				}
   			}
   		},
   		animation: {
@@ -146,7 +157,8 @@ export default {
   			'accordion-up': 'accordion-up 0.2s ease-out',
   			float: 'float 3s ease-in-out infinite',
   			'circuit-flow': 'circuit-flow 20s linear infinite',
-  			'glow-pulse': 'glow-pulse 2s ease-in-out infinite'
+  			'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
+  			'gradient-border': 'gradient-border 3s ease infinite'
   		},
   		backgroundImage: {
   			'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

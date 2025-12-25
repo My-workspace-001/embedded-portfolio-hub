@@ -138,11 +138,17 @@ const SkillsSection = () => {  const awards = [
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {awards.map((award, index) => (
               <AnimatedCard key={index} delay={index * 80}>
-                <div className="p-4 rounded-lg bg-card border border-border hover:border-accent/50 transition-all group h-full">
-                  <h4 className="font-mono font-semibold text-sm text-foreground group-hover:text-accent transition-colors mb-2">
-                    {award.title}
-                  </h4>
-                  <p className="text-xs text-muted-foreground">{award.description}</p>
+                <div className="p-4 rounded-lg bg-gray-200 dark:bg-gray-700/70 border-2 border-accent/30 hover:border-accent hover:shadow-[0_0_20px_rgba(var(--accent-rgb),0.3)] transition-all duration-300 group h-full flex items-start justify-between gap-3 relative overflow-hidden border-l-4 border-l-accent shadow-[-4px_0_12px_rgba(var(--accent-rgb),0.2)]">
+                  {/* Decorative corner */}
+                  <div className="absolute top-0 right-0 w-16 h-16 bg-accent/5 rounded-bl-full"></div>
+                  
+                  <div className="flex-1 relative z-10">
+                    <h4 className="font-mono font-semibold text-sm text-foreground group-hover:text-accent transition-colors mb-2">
+                      {award.title}
+                    </h4>
+                    <p className="text-xs text-muted-foreground">{award.description}</p>
+                  </div>
+                  <Award className="w-6 h-6 text-yellow-500 group-hover:text-yellow-400 group-hover:scale-110 transition-all duration-300 flex-shrink-0 mt-0.5 relative z-10" />
                 </div>
               </AnimatedCard>
             ))}

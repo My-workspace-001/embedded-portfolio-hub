@@ -27,12 +27,12 @@ const ContactSection = () => {
     {
       icon: Github,
       label: 'GitHub',
-      href: 'https://github.com/RaveenPramuditha',
+      href: 'https://github.com/RPX2001',
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      href: 'https://linkedin.com/in/Raveen-Pramuditha',
+      href: 'https://www.linkedin.com/in/raveen-pramuditha-504564214',
     },
     {
       icon: FileText,
