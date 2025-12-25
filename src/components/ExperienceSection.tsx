@@ -1,4 +1,4 @@
-import { Briefcase, GraduationCap } from 'lucide-react';
+import { Briefcase, GraduationCap, ExternalLink } from 'lucide-react';
 import AnimatedCard from './AnimatedCard';
 
 const ExperienceSection = () => {
@@ -9,6 +9,7 @@ const ExperienceSection = () => {
       company: 'Variosystems',
       period: 'Dec 2024 - June 2025',
       description: 'Industrial internship focused on embedded systems and manufacturing processes.',
+      website: 'https://www.variosystems.com',
     },
     {
       type: 'work',
@@ -16,6 +17,7 @@ const ExperienceSection = () => {
       company: 'RoboticGen',
       period: 'Feb 2025 - Present',
       description: 'Part-time position mentoring students and designing PCBs for robotics projects.',
+      website: 'https://www.roboticgen.co',
     },
     {
       type: 'work',
@@ -23,6 +25,7 @@ const ExperienceSection = () => {
       company: 'Qubebots - Xfly Nano-drone Platform',
       period: 'Dec 2023 - Sep 2024',
       description: 'Research and development on nano-drone platform with focus on embedded systems.',
+      website: 'https://www.qubebots.com',
     },
   ];
 
@@ -35,9 +38,9 @@ const ExperienceSection = () => {
       focus: 'Electronics, Embedded Systems, Robotics, IoT, Computer Vision',
     },
     {
-      degree: 'GCE Advanced Level (Physical Stream)',
+      degree: 'Secondary Education - GCE Advanced Level',
       institution: 'Rahula College, Matara',
-      period: '2020',
+      period: '2007 - 2020',
       details: 'Z Score: 2.5233',
     },
   ];
@@ -72,7 +75,20 @@ const ExperienceSection = () => {
                           {exp.period}
                         </span>
                       </div>
-                      <p className="text-sm text-primary mb-2">{exp.company}</p>
+                      <div className="flex items-center gap-3 mb-2">
+                        <p className="text-sm text-primary">{exp.company}</p>
+                        {exp.website && (
+                          <a
+                            href={exp.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 text-xs font-mono text-primary hover:text-primary/70 border border-primary/30 hover:border-primary/50 rounded px-2 py-1 transition-all"
+                          >
+                            Visit Site
+                            <ExternalLink className="w-3 h-3" />
+                          </a>
+                        )}
+                      </div>
                       <p className="text-sm text-muted-foreground">{exp.description}</p>
                     </div>
                   </div>
@@ -99,7 +115,7 @@ const ExperienceSection = () => {
                           {edu.period}
                         </span>
                       </div>
-                      <p className="text-sm text-accent mb-2">{edu.institution}</p>
+                      <p className="text-sm text-foreground mb-2">{edu.institution}</p>
                       <p className="text-sm text-muted-foreground">{edu.details}</p>
                       {edu.focus && (
                         <p className="text-xs text-muted-foreground mt-2 font-mono">

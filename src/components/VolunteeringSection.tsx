@@ -1,42 +1,43 @@
-import { Users, Lightbulb, Mic, Youtube, ExternalLink } from 'lucide-react';
+import { Users, Lightbulb, Mic, Youtube, ExternalLink, Video } from 'lucide-react';
 import AnimatedCard from './AnimatedCard';
 
 const VolunteeringSection = () => {
   const activities = [
     {
       icon: Users,
-      title: 'Embedded Systems Workshop',
-      organization: 'RoboticGen / University of Moratuwa',
-      description: 'Conducted workshops on ESP32, STM32 programming, and PCB design fundamentals for undergraduate students.',
+      title: 'Robotics Worshop - Traction 2.0 ',
+      organization: 'Organized by IEEE Robotic and Automation Society - IIT',
+      description: 'Conducted a hands-on workshop on building a line following robot using IR sensors and motors.',
       type: 'Workshop',
-      image: '/workshop1.webp', // Add your workshop image
-      youtubeLink: 'https://youtube.com/watch?v=your-video-id', // Add your YouTube link
-    },
-    {
-      icon: Mic,
-      title: 'IoT & LoRa Technology Seminar',
-      organization: 'IEEE Student Branch',
-      description: 'Presented on LoRa mesh networking and IoT device development for disaster communication systems.',
-      type: 'Seminar',
-      image: '/workshop2.webp',
-      youtubeLink: 'https://youtube.com/watch?v=your-video-id',
-    },
-    {
-      icon: Lightbulb,
-      title: 'Robotics Competition Mentor',
-      organization: 'RoboticGen',
-      description: 'Mentoring students for national robotics competitions including SLRC and IESL Robogames.',
-      type: 'Mentoring',
-      image: '/workshop3.webp',
+      image: '/iit3.webp', // Add your workshop image
+      // youtubeLink: 'https://youtube.com/watch?v=your-video-id', // Add your YouTube link
     },
     {
       icon: Users,
-      title: 'Arduino & Electronics Workshop',
-      organization: 'Community Outreach',
-      description: 'Introductory workshops on basic electronics and Arduino programming for school students.',
+      title: 'Robotics Workshop - Nexgen 1.0',
+      organization: 'IEEE Robotic and Automation Society - University of Moratuwa',
+      description: 'Coducted a beginner-friendly workshop on building and programming basic robots using Arduino and obstacle avoiding robot.',
+      type: 'Seminar',
+      image: '/ws2.webp',
+      // youtubeLink: 'https://youtube.com/watch?v=your-video-id',
+    },
+    {
+      icon: Video,
+      title: 'Learning Lecture - I2S Interface and Audio Amplifier Design',
+      organization: 'RoboticGen',
+      description: 'Conducted an online lecture on I2S communication protocol and audio amplifier circuit design for mentors at RoboticGen.',
+      type: 'Lecture',
+      image: '/rgenws1.webp',
+      youtubeLink: 'https://youtu.be/W4w_CZutSCM?si=SUi4HrLSfPn4GOEI',
+    },
+    {
+      icon: Video,
+      title: 'Learning Lecture - Design a Power Supply for a PCB',
+      organization: 'RoboticGen',
+      description: 'Online workshop on designing efficient power supply circuits for embedded systems and PCBs using LDO and Switching Regulators.',
       type: 'Workshop',
-      image: '/workshop4.webp',
-      youtubeLink: 'https://youtube.com/watch?v=your-video-id',
+      image: '/rgenws2.webp',
+      youtubeLink: 'https://youtu.be/S3JD2iGs0FU?si=KnQIRhEYIAshMc1J',
     },
   ];
 
@@ -62,13 +63,13 @@ const VolunteeringSection = () => {
         </div>
 
         {/* Workshops & Activities Grid */}
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 gap-4 mb-12 max-w-5xl mx-auto">
           {activities.map((activity, index) => (
             <AnimatedCard key={activity.title} delay={index * 100}>
-              <div className="group rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--primary)/0.15)] h-full overflow-hidden">
+              <div className="group rounded-lg bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--primary)/0.15)] h-full overflow-hidden scale-90">
                 {/* Image Section */}
                 {activity.image && (
-                  <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-primary/5 to-accent/5">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-primary/5 to-accent/5">
                     <img
                       src={activity.image}
                       alt={activity.title}
@@ -79,32 +80,32 @@ const VolunteeringSection = () => {
                         href={activity.youtubeLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-red-600 hover:bg-red-700 flex items-center justify-center transition-all hover:scale-110 shadow-lg"
+                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-red-600 hover:bg-red-700 flex items-center justify-center transition-all hover:scale-110 shadow-lg"
                         aria-label="Watch on YouTube"
                       >
-                        <Youtube className="w-8 h-8 text-white" />
+                        <Youtube className="w-5 h-5 text-white" />
                       </a>
                     )}
                   </div>
                 )}
                 
                 {/* Content Section */}
-                <div className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
-                      <activity.icon className="w-6 h-6 text-primary" />
+                <div className="p-3">
+                  <div className="flex items-start gap-2">
+                    <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
+                      <activity.icon className="w-4 h-4 text-primary" />
                     </div>
-                    <div className="flex-1">
-                      <div className="flex flex-wrap items-center gap-2 mb-2">
-                        <h3 className="font-mono font-semibold text-foreground">
+                    <div className="flex-1 min-w-0">
+                      <div className="flex flex-wrap items-center gap-1.5 mb-1">
+                        <h3 className="font-mono font-semibold text-sm text-foreground leading-tight">
                           {activity.title}
                         </h3>
-                        <span className="text-xs font-mono text-accent bg-accent/10 px-2 py-0.5 rounded">
+                        <span className="text-xs font-mono text-accent bg-accent/10 px-1.5 py-0.5 rounded">
                           {activity.type}
                         </span>
                       </div>
-                      <p className="text-sm text-primary mb-2">{activity.organization}</p>
-                      <p className="text-sm text-muted-foreground mb-3">{activity.description}</p>
+                      <p className="text-xs text-primary mb-1 leading-tight">{activity.organization}</p>
+                      <p className="text-xs text-muted-foreground mb-1.5 leading-snug line-clamp-2">{activity.description}</p>
                       
                       {/* YouTube Link */}
                       {activity.youtubeLink && (
@@ -112,11 +113,11 @@ const VolunteeringSection = () => {
                           href={activity.youtubeLink}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 text-xs font-mono text-red-600 hover:text-red-700 transition-colors"
+                          className="inline-flex items-center gap-1 text-xs font-mono text-red-600 hover:text-red-700 transition-colors"
                         >
-                          <Youtube className="w-4 h-4" />
-                          Watch Workshop
-                          <ExternalLink className="w-3 h-3" />
+                          <Youtube className="w-3 h-3" />
+                          Watch
+                          <ExternalLink className="w-2 h-2" />
                         </a>
                       )}
                     </div>
