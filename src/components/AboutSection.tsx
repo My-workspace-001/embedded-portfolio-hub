@@ -18,8 +18,18 @@ const AboutSection = () => {
     title: 'Software Dev',
     description: 'C/C++, Python, FreeRTOS, Computer Vision with OpenCV'
   }];
-  return <section id="about" className="py-24 relative">
-      <div className="container mx-auto px-4">
+  return <section id="about" className="py-24 relative overflow-hidden">
+      {/* PCB Background Image with High Transparency */}
+      <div className="absolute inset-0 opacity-20 pointer-events-none">
+        <div className="absolute inset-0 bg-[url('/pcb-background.jpg')] bg-cover bg-center bg-no-repeat" 
+             style={{
+               backgroundImage: "url('/pcb_background.webp')",
+               filter: 'grayscale(80%) contrast(1.2)'
+             }} 
+        />
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -33,7 +43,7 @@ const AboutSection = () => {
           <AnimatedCard>
             <div className="text-center space-y-6 mb-12">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I'm a passionate electronics engineer with a focus on building 
+                I'm a passionate Electronics Engineering undergraduate with a focus on building 
                 <span className="text-[#0f1729]"> real-world hardware solutions</span>. 
                 Currently in my final year at the 
                 <span className="text-foreground font-medium"> University of Moratuwa</span>, 
@@ -41,10 +51,10 @@ const AboutSection = () => {
               </p>
               
               <p className="text-lg text-muted-foreground leading-relaxed">
-                My expertise spans from low-level embedded firmware to complete IoT systems. 
+                My expertise spans from low level embedded firmware to complete IoT systems. 
                 I enjoy the challenge of integrating hardware and software to create 
                 <span className="text-[#0f1729]"> efficient, reliable solutions</span> 
-                for real-world problems.
+                for real world problems.
               </p>
 
               <p className="text-lg text-muted-foreground leading-relaxed">

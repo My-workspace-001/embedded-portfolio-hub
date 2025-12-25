@@ -15,11 +15,16 @@ const HeroSection = () => {
       
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="max-w-4xl mx-auto text-center shadow rounded-md bg-inherit">
-          {/* Terminal-style intro */}
-          <div className="inline-block mb-6 opacity-0 animate-fade-in-up stagger-1">
-            <span className="font-mono text-sm text-muted-foreground bg-muted/50 px-4 py-2 rounded-full border border-border">
-              <span className="text-primary">$</span> whoami
-            </span>
+          {/* Profile Image */}
+          <div className="mb-8 flex justify-center opacity-0 animate-fade-in-up stagger-1">
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-full blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+              <img 
+                src="/me.webp" 
+                alt="Raveen Pathirana" 
+                className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full object-cover object-top border-4 border-background shadow-2xl"
+              />
+            </div>
           </div>
 
           {/* Name */}
@@ -40,9 +45,9 @@ const HeroSection = () => {
           {/* Description */}
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed opacity-0 animate-fade-in-up stagger-4">
             Final year undergraduate at the University of Moratuwa, specializing in 
-            <span className="text-primary"> embedded systems</span>, 
-            <span className="text-[#0284c5]"> IoT</span>, and 
-            <span className="text-primary"> robotics</span>. 
+            <span className="text-primary"> Embedded Systems</span>, 
+            <span className="text-primary"> IoT</span>, and 
+            <span className="text-primary"> Robotics</span>. 
             Building real hardware solutions with microcontrollers, sensors, and custom PCB designs.
           </p>
 
@@ -62,10 +67,10 @@ const HeroSection = () => {
 
           {/* Social Links */}
           <div className="items-center justify-center opacity-0 animate-fade-in-up stagger-6 flex flex-row gap-[16px]">
-            <a href="https://github.com/RaveenPramuditha" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-muted/50 text-muted-foreground hover:text-primary hover:bg-muted transition-all duration-300 hover:shadow-[0_0_20px_hsl(var(--primary)/0.3)]">
+            <a href="https://github.com/RPX2001" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-muted/50 text-muted-foreground hover:text-primary hover:bg-muted transition-all duration-300 hover:shadow-[0_0_20px_hsl(var(--primary)/0.3)]">
               <Github className="w-5 h-5" />
             </a>
-            <a href="https://linkedin.com/in/Raveen-Pramuditha" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-muted/50 text-muted-foreground hover:text-primary hover:bg-muted transition-all duration-300 hover:shadow-[0_0_20px_hsl(var(--primary)/0.3)]">
+            <a href="https://www.linkedin.com/in/raveen-pramuditha-504564214" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-muted/50 text-muted-foreground hover:text-primary hover:bg-muted transition-all duration-300 hover:shadow-[0_0_20px_hsl(var(--primary)/0.3)]">
               <Linkedin className="w-5 h-5" />
             </a>
             <a href="mailto:raveenpspathirana99@gmail.com" className="p-3 rounded-full bg-muted/50 text-muted-foreground hover:text-primary hover:bg-muted transition-all duration-300 hover:shadow-[0_0_20px_hsl(var(--primary)/0.3)]">
@@ -74,16 +79,6 @@ const HeroSection = () => {
             <a href="https://medium.com/@raveenpspathirana99" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-muted/50 text-muted-foreground hover:text-primary hover:bg-muted transition-all duration-300 hover:shadow-[0_0_20px_hsl(var(--primary)/0.3)]">
               <FileText className="w-5 h-5" />
             </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in stagger-6">
-        <div className="flex flex-col items-center gap-2 text-muted-foreground">
-          <span className="text-xs font-mono">scroll</span>
-          <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex justify-center pt-2">
-            <div className="w-1 h-3 bg-primary rounded-full animate-bounce" />
           </div>
         </div>
       </div>

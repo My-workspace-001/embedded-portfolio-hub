@@ -22,11 +22,11 @@ const ProjectCard = ({
   featured = false,
   ongoing = false,
 }: ProjectCardProps) => {
-  return (
+  const cardContent = (
     <div
       className={`group relative rounded-xl overflow-hidden bg-card border transition-all duration-500 hover:shadow-[0_0_40px_hsl(var(--primary)/0.15)] ${
         featured ? 'border-primary/30 hover:border-primary/60' : 'border-border hover:border-primary/40'
-      }`}
+      } ${github ? 'cursor-pointer' : ''}`}
     >
       {/* Image/Placeholder */}
       <div className="relative h-48 bg-gradient-to-br from-muted to-secondary overflow-hidden">
@@ -65,20 +65,19 @@ const ProjectCard = ({
         {/* Links */}
         <div className="absolute top-3 right-3 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
           {github && (
-            <a
-              href={github}
-              target="_blank"
-              rel="noopener noreferrer"
+            <div
+              onClick={(e) => e.stopPropagation()}
               className="p-2 rounded-full bg-background/80 text-foreground hover:text-primary transition-colors"
             >
               <Github className="w-4 h-4" />
-            </a>
+            </div>
           )}
           {live && (
             <a
               href={live}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
               className="p-2 rounded-full bg-background/80 text-foreground hover:text-primary transition-colors"
             >
               <ExternalLink className="w-4 h-4" />
@@ -109,6 +108,19 @@ const ProjectCard = ({
         </div>
       </div>
     </div>
+  );
+
+  return github ? (
+    <a
+      href={github}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block"
+    >
+      {cardContent}
+    </a>
+  ) : (
+    cardContent
   );
 };
 
