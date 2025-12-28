@@ -1,62 +1,13 @@
-import { Code, Cpu, Wrench, Users, Award } from 'lucide-react';
+import { Award } from 'lucide-react';
 import AnimatedCard from './AnimatedCard';
 
-const SkillsSection = () => {  const awards = [
+const SkillsSection = () => {
+  const awards = [
     { title: 'Fifth Place - SLIIT Robofest 2024', description: 'Maze-solving micromouse robot using STM32' },
     { title: 'Finalists - IESL Robogames 2024', description: 'Kobuki Robot with Computer Vision and ML' },
     { title: 'Finalist - SLRC Robotic Challenge 2023', description: 'Computer vision based robot using Raspberry Pi' },
     { title: 'Semi Finalist - SLIoT Challenge 2023', description: 'Adaptive traffic light system with OpenCV and ML' },
     { title: 'Dean\'s List', description: 'Semester 1 and Semester 6' },
-  ];
-  const skillCategories = [
-    {
-      icon: Code,
-      title: 'Programming Languages',
-      skills: [
-        { name: 'C/C++', level: 95 },
-        { name: 'Python', level: 90 },
-        { name: 'Arduino', level: 95 },
-        { name: 'Verilog/VHDL', level: 75 },
-        { name: 'C# / .NET', level: 70 },
-        { name: 'FreeRTOS', level: 85 },
-      ],
-    },
-    {
-      icon: Cpu,
-      title: 'Hardware & Platforms',
-      skills: [
-        { name: 'STM32', level: 90 },
-        { name: 'ESP32', level: 95 },
-        { name: 'Raspberry Pi', level: 90 },
-        { name: 'Arduino', level: 95 },
-        { name: 'FPGA', level: 70 },
-        { name: 'ATmega', level: 85 },
-      ],
-    },
-    {
-      icon: Wrench,
-      title: 'Software & Tools',
-      skills: [
-        { name: 'Altium Designer', level: 90 },
-        { name: 'SolidWorks', level: 85 },
-        { name: 'OpenCV', level: 85 },
-        { name: 'ROS2 / Gazebo', level: 75 },
-        { name: 'PlatformIO', level: 90 },
-        { name: 'Quartus Prime', level: 70 },
-      ],
-    },
-    {
-      icon: Users,
-      title: 'Soft Skills',
-      skills: [
-        { name: 'Leadership', level: 90 },
-        { name: 'Problem Solving', level: 95 },
-        { name: 'Team Collaboration', level: 90 },
-        { name: 'Technical Writing', level: 80 },
-        { name: 'Mentoring', level: 85 },
-        { name: 'Project Management', level: 80 },
-      ],
-    },
   ];
 
   return (
@@ -70,52 +21,15 @@ const SkillsSection = () => {  const awards = [
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full" />
         </div>
 
-        {/* Skills Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
-          {skillCategories.map((category, categoryIndex) => (
-            <AnimatedCard key={category.title} delay={categoryIndex * 100}>
-              <div className="p-6 rounded-xl bg-card border border-border hover:border-primary/40 transition-all duration-300 h-full">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <category.icon className="w-5 h-5 text-primary" />
-                  </div>
-                  <h3 className="font-mono font-bold text-foreground">{category.title}</h3>
-                </div>
-
-                <div className="space-y-4">
-                  {category.skills.map((skill, skillIndex) => (
-                    <div key={skill.name}>
-                      <div className="flex justify-between items-center mb-1">
-                        <span className="text-sm font-mono text-muted-foreground">{skill.name}</span>
-                        <span className="text-xs font-mono text-primary">{skill.level}%</span>
-                      </div>
-                      <div className="h-2 bg-muted rounded-full overflow-hidden">
-                        <div
-                          className="h-full rounded-full transition-all duration-1000 ease-out"
-                          style={{
-                            width: `${skill.level}%`,
-                            background: `linear-gradient(90deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%)`,
-                            animationDelay: `${categoryIndex * 0.2 + skillIndex * 0.1}s`,
-                          }}
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </AnimatedCard>
-          ))}
-        </div>
-
-        {/* Additional Tech Tags */}
-        <AnimatedCard delay={400}>
-          <div className="mt-12 text-center">
+        {/* Tech Tags */}
+        <AnimatedCard delay={100}>
+          <div className="text-center">
             <h4 className="font-mono text-sm text-muted-foreground mb-6">
-              Also experienced with:
+              Technologies & Tools:
             </h4>
             <div className="flex flex-wrap justify-center gap-3">
               {[
-                'MQTT', 'HTTPS', 'I2C', 'SPI', 'UART', 'Bluetooth', 
+                'C++','Python','Altium','Raspberry Pi','STM32','ESP32','Arduino','OpenCV','.Net8','C#','SolidWorks','FreeRTOS','MySQL','VHDL','IoT','Networking', 
                 'LoRa', 'Git', 'Linux', 'Matlab', 'LTspice', 'EasyEDA'
               ].map((tech) => (
                 <span
