@@ -25,7 +25,7 @@ const VolunteeringSection = () => {
   const activities = [
     {
       icon: Users,
-      title: 'Robotics Worshop - Traction 2.0 ',
+      title: 'Robotics Workshop - Traction 2.0 ',
       organization: 'Organized by IEEE Robotic and Automation Society - IIT',
       description: 'Conducted a hands-on workshop on building a line following robot using IR sensors and motors.',
       type: 'Workshop',
@@ -77,7 +77,7 @@ const VolunteeringSection = () => {
       description: 'Leading volunteer coordination for robotics events',
     },
     {
-      title: 'Logistic Lead',
+      title: 'Logistic Committee Lead',
       organization: 'IEEE Student Branch - University of Moratuwa',
       period: '2023 - 2024',
       image: '/logistic.webp',
