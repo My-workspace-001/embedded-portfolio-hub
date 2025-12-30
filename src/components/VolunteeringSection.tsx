@@ -8,7 +8,7 @@ const VolunteeringSection = () => {
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollBy({
-        left: -320,
+        left: -336, // width of card (320px) + gap (16px)
         behavior: 'smooth'
       });
     }
@@ -17,7 +17,7 @@ const VolunteeringSection = () => {
   const scrollRight = () => {
     if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollBy({
-        left: 320,
+        left: 336, // width of card (320px) + gap (16px)
         behavior: 'smooth'
       });
     }
@@ -107,7 +107,7 @@ const VolunteeringSection = () => {
         </div>
 
         {/* Workshops & Activities Grid */}
-        <div className="grid md:grid-cols-2 gap-4 mb-12 max-w-5xl mx-auto">
+        <div className= "grid md:grid-cols-2 gap-4 mb-12 max-w-5xl mx-auto">
           {activities.map((activity, index) => (
             <AnimatedCard key={activity.title} delay={index * 100}>
               <div className="group rounded-lg bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--primary)/0.15)] h-full overflow-hidden scale-90">
@@ -202,14 +202,14 @@ const VolunteeringSection = () => {
             {/* Scrollable Container */}
             <div
               ref={scrollContainerRef}
-              className="overflow-x-auto scrollbar-hide pb-4"
+              className="overflow-x-auto scrollbar-hide pb-4 max-w-[1024px] mx-auto"
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
               <div className="flex gap-4">
                 {extraActivities.map((activity, index) => (
                   <div
                     key={index}
-                    className="flex-shrink-0 w-72"
+                    className="flex-shrink-0 w-80"
                   >
                     <div className="rounded-lg bg-card border border-border hover:border-primary/50 transition-all duration-300 shadow-lg overflow-hidden h-full">
                       {/* Image */}
