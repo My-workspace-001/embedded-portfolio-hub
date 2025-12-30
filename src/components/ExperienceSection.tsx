@@ -13,11 +13,19 @@ const ExperienceSection = () => {
     },
     {
       type: 'work',
-      title: 'Mentor and PCB Designer',
-      company: 'RoboticGen',
+      title: 'Mentor Level 2',
+      company: 'RoboticGen Academy',
       period: 'Feb 2025 - Present',
-      description: 'Part-time position mentoring students and designing PCBs for robotics projects.',
+      description: 'Mentoring students to build Robotics, Programming and AI projects.',
       website: 'https://www.roboticgen.co',
+    },
+    {
+      type: 'work',
+      title: 'PCB and Electronic Circuit Designer',
+      company: 'RoboticGen Labs',
+      period: 'Sep 2025 - Present',
+      description: 'Designing PCBs and Electronic circuits for Embedded systems projects.',
+      website: 'https://roboticgenlabs.com/',
     },
     {
       type: 'work',

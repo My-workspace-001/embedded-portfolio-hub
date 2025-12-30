@@ -8,6 +8,7 @@ const SkillsSection = () => {
     { title: 'Finalist - SLRC Robotic Challenge 2023', description: 'Computer vision based robot using Raspberry Pi' },
     { title: 'Semi Finalist - SLIoT Challenge 2023', description: 'Adaptive traffic light system with OpenCV and ML' },
     { title: 'Dean\'s List', description: 'Semester 1 and Semester 6' },
+    { title: 'Finalist (Top 10) - Spark Challenge 2024', description: 'Smart Waste Management System' },
   ];
 
   return (

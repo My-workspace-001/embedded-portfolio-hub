@@ -77,15 +77,15 @@ const VolunteeringSection = () => {
       description: 'Leading volunteer coordination for robotics events',
     },
     {
-      title: 'Logistic Committee Lead',
+      title: 'Logistic and Management Committee Lead',
       organization: 'IEEE Student Branch - University of Moratuwa',
       period: '2023 - 2024',
       image: '/logistic.webp',
       description: 'Coordinating logistics for student branch events',
     },
     {
-      title: 'Exmo 23 Organizing Committee',
-      organization: 'University of Moratuwa',
+      title: 'Exmo 2023 Organizing Committee Member',
+      organization: 'Faculty of Engineering University of Moratuwa',
       period: '2023',
       image: '/exmo.webp',
       description: 'Organizing committee member for Exmo exhibition',
@@ -227,7 +227,7 @@ const VolunteeringSection = () => {
                           {activity.title}
                         </h4>
                         <p className="text-sm text-primary mb-1.5">{activity.organization}</p>
-                        <p className="text-sm font-mono text-accent bg-accent/10 px-2 py-1 rounded inline-block">
+                        <p className="text-sm text-muted-foreground mb-2 leading-relaxed">
                           {activity.period}
                         </p>
                       </div>
