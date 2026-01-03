@@ -42,6 +42,15 @@ const VolunteeringSection = () => {
       // youtubeLink: 'https://youtube.com/watch?v=your-video-id',
     },
     {
+      icon: Users,
+      title: 'Raaspberry Pi Workshop - Spark Challenge 2024',
+      organization: 'Electronic Club - University of Moratuwa',
+      description: 'Coducted a hands on workshop on Raspberry Pi basics, GPIO interfacing, and Python programming for school students.',
+      type: 'Seminar',
+      image: '/spark1.webp',
+      // youtubeLink: 'https://youtube.com/watch?v=your-video-id',
+    },
+    {
       icon: Video,
       title: 'Learning Lecture - I2S Interface and Audio Amplifier Design',
       organization: 'RoboticGen',
@@ -107,69 +116,138 @@ const VolunteeringSection = () => {
         </div>
 
         {/* Workshops & Activities Grid */}
-        <div className= "grid md:grid-cols-2 gap-4 mb-12 max-w-5xl mx-auto">
-          {activities.map((activity, index) => (
-            <AnimatedCard key={activity.title} delay={index * 100}>
-              <div className="group rounded-lg bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--primary)/0.15)] h-full overflow-hidden scale-90">
-                {/* Image Section */}
-                {activity.image && (
-                  <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-primary/5 to-accent/5">
-                    <img
-                      src={activity.image}
-                      alt={activity.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    {activity.youtubeLink && (
-                      <a
-                        href={activity.youtubeLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-red-600 hover:bg-red-700 flex items-center justify-center transition-all hover:scale-110 shadow-lg"
-                        aria-label="Watch on YouTube"
-                      >
-                        <Youtube className="w-5 h-5 text-white" />
-                      </a>
-                    )}
-                  </div>
-                )}
-                
-                {/* Content Section */}
-                <div className="p-3">
-                  <div className="flex items-start gap-2">
-                    <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
-                      <activity.icon className="w-4 h-4 text-primary" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex flex-wrap items-center gap-1.5 mb-1.5">
-                        <h3 className="font-mono font-semibold text-base text-foreground leading-tight">
-                          {activity.title}
-                        </h3>
-                        <span className="text-xs font-mono text-accent bg-accent/10 px-2 py-0.5 rounded">
-                          {activity.type}
-                        </span>
-                      </div>
-                      <p className="text-sm text-primary mb-1.5 leading-tight">{activity.organization}</p>
-                      <p className="text-sm text-muted-foreground mb-2 leading-relaxed">{activity.description}</p>
-                      
-                      {/* YouTube Link */}
+        <div className="mb-12 max-w-6xl mx-auto">
+          {/* First Row - 3 Cards */}
+          <div className="grid md:grid-cols-3 gap-6 mb-6">
+            {activities.slice(0, 3).map((activity, index) => (
+              <AnimatedCard key={activity.title} delay={index * 100}>
+                <div className="group rounded-lg bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--primary)/0.15)] h-full overflow-hidden">
+                  {/* Image Section */}
+                  {activity.image && (
+                    <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-primary/5 to-accent/5">
+                      <img
+                        src={activity.image}
+                        alt={activity.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
                       {activity.youtubeLink && (
                         <a
                           href={activity.youtubeLink}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 text-sm font-mono text-red-600 hover:text-red-700 transition-colors"
+                          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-red-600 hover:bg-red-700 flex items-center justify-center transition-all hover:scale-110 shadow-lg"
+                          aria-label="Watch on YouTube"
                         >
-                          <Youtube className="w-3.5 h-3.5" />
-                          Watch
-                          <ExternalLink className="w-2.5 h-2.5" />
+                          <Youtube className="w-5 h-5 text-white" />
                         </a>
                       )}
                     </div>
+                  )}
+                  
+                  {/* Content Section */}
+                  <div className="p-3">
+                    <div className="flex items-start gap-2">
+                      <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
+                        <activity.icon className="w-4 h-4 text-primary" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex flex-wrap items-center gap-1.5 mb-1.5">
+                          <h3 className="font-mono font-semibold text-base text-foreground leading-tight">
+                            {activity.title}
+                          </h3>
+                          <span className="text-xs font-mono text-accent bg-accent/10 px-2 py-0.5 rounded">
+                            {activity.type}
+                          </span>
+                        </div>
+                        <p className="text-sm text-primary mb-1.5 leading-tight">{activity.organization}</p>
+                        <p className="text-sm text-muted-foreground mb-2 leading-relaxed">{activity.description}</p>
+                        
+                        {/* YouTube Link */}
+                        {activity.youtubeLink && (
+                          <a
+                            href={activity.youtubeLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 text-sm font-mono text-red-600 hover:text-red-700 transition-colors"
+                          >
+                            <Youtube className="w-3.5 h-3.5" />
+                            Watch
+                            <ExternalLink className="w-2.5 h-2.5" />
+                          </a>
+                        )}
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </AnimatedCard>
-          ))}
+              </AnimatedCard>
+            ))}
+          </div>
+
+          {/* Second Row - 2 Cards Centered */}
+          <div className="grid md:grid-cols-2 gap-6 max-w-[calc(66.666%-1rem)] mx-auto">
+            {activities.slice(3, 5).map((activity, index) => (
+              <AnimatedCard key={activity.title} delay={(index + 3) * 100}>
+                <div className="group rounded-lg bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--primary)/0.15)] h-full overflow-hidden">
+                  {/* Image Section */}
+                  {activity.image && (
+                    <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-primary/5 to-accent/5">
+                      <img
+                        src={activity.image}
+                        alt={activity.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      {activity.youtubeLink && (
+                        <a
+                          href={activity.youtubeLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-red-600 hover:bg-red-700 flex items-center justify-center transition-all hover:scale-110 shadow-lg"
+                          aria-label="Watch on YouTube"
+                        >
+                          <Youtube className="w-5 h-5 text-white" />
+                        </a>
+                      )}
+                    </div>
+                  )}
+                  
+                  {/* Content Section */}
+                  <div className="p-3">
+                    <div className="flex items-start gap-2">
+                      <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
+                        <activity.icon className="w-4 h-4 text-primary" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex flex-wrap items-center gap-1.5 mb-1.5">
+                          <h3 className="font-mono font-semibold text-base text-foreground leading-tight">
+                            {activity.title}
+                          </h3>
+                          <span className="text-xs font-mono text-accent bg-accent/10 px-2 py-0.5 rounded">
+                            {activity.type}
+                          </span>
+                        </div>
+                        <p className="text-sm text-primary mb-1.5 leading-tight">{activity.organization}</p>
+                        <p className="text-sm text-muted-foreground mb-2 leading-relaxed">{activity.description}</p>
+                        
+                        {/* YouTube Link */}
+                        {activity.youtubeLink && (
+                          <a
+                            href={activity.youtubeLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 text-sm font-mono text-red-600 hover:text-red-700 transition-colors"
+                          >
+                            <Youtube className="w-3.5 h-3.5" />
+                            Watch
+                            <ExternalLink className="w-2.5 h-2.5" />
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </AnimatedCard>
+              ))}
+          </div>
         </div>
 
         {/* Extra Activities Carousel */}
