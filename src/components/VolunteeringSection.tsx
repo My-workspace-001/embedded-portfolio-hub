@@ -43,7 +43,7 @@ const VolunteeringSection = () => {
     },
     {
       icon: Users,
-      title: 'Raaspberry Pi Workshop - Spark Challenge 2024',
+      title: 'Raspberry Pi Workshop - Spark Challenge 2024',
       organization: 'Electronic Club - University of Moratuwa',
       description: 'Coducted a hands on workshop on Raspberry Pi basics, GPIO interfacing, and Python programming for school students.',
       type: 'Seminar',
