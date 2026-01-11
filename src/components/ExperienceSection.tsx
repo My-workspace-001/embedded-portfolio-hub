@@ -42,7 +42,7 @@ const ExperienceSection = () => {
       degree: 'B.Sc. Electronic & Telecommunication Engineering',
       institution: 'University of Moratuwa',
       period: 'Aug 2022 - Present',
-      details: 'GPA: 3.71 | Dean\'s List Semester 1 & 6',
+      // details: 'GPA: 3.71 | Dean\'s List Semester 1 & 6',
       focus: 'Electronics, Embedded Systems, Robotics, IoT, Computer Vision',
     },
     {
