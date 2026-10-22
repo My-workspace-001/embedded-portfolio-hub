@@ -39,7 +39,7 @@ const ProjectsSection = () => {
       description: 'Optimizing LoRa mesh networks for post-disaster communication. Evaluating network reliability, latency, and scalability while implementing custom routing algorithms by modifying Meshtastic firmware.',
       technologies: ['C++', 'ESP32', 'FreeRTOS', 'PlatformIO', 'LoRa'],
       featured: true,
-      ongoing: true,
+      // ongoing: true,
       image: '/meshtastic.webp',
       github: 'https://github.com/orgs/Meshtastic-DM/repositories',
     },
@@ -51,14 +51,14 @@ const ProjectsSection = () => {
       image: '/esp32.webp',
       github: 'https://github.com/RPX2001/EcoWatt_TeamPowerPort.git',
     },
-    {
-      title: 'Drone Mounted Noise Cancelling Device',
-      description: 'Designing a drone-mounted audio communication system to enable clear one-way communication in high-noise environments using advanced signal processing.',
-      technologies: ['C', 'C++', 'STM32', 'Raspberry Pi', 'DSP', 'Matlab'],
-      ongoing: true,
-      image: '/drone.webp',
-      github:'https://github.com/RPX2001/Drone-Speaker-System.git'
-    },
+    // {
+    //   title: 'Drone Mounted Noise Cancelling Device',
+    //   description: 'Designing a drone-mounted audio communication system to enable clear one-way communication in high-noise environments using advanced signal processing.',
+    //   technologies: ['C', 'C++', 'STM32', 'Raspberry Pi', 'DSP', 'Matlab'],
+    //   // ongoing: true,
+    //   image: '/drone.webp',
+    //   github:'https://github.com/RPX2001/Drone-Speaker-System.git'
+    // },
     {
       title: 'Micromouse Maze-Solving Robot',
       description: 'Implemented Flood-Fill algorithm for efficient maze-solving with optimized path planning. Integrated PID control with encoders and IMU for precise movement.',
