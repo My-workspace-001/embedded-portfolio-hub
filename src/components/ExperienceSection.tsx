@@ -5,6 +5,15 @@ const ExperienceSection = () => {
   const experiences = [
     {
       type: 'work',
+      title: 'Test Development Engineer',
+      company: 'GPV Lanka',
+      period: 'Jul 2026',
+      description: 'Currently working as an Electronic Test Development Engineer engaging industrial PCB assembling and production environments.',
+      website: 'https://gpv-group.com/locations/gpv-sri-lanka/',
+    },
+
+    {
+      type: 'work',
       title: 'Inplant Trainee - Internship',
       company: 'Variosystems',
       period: 'Dec 2024 - June 2025',
