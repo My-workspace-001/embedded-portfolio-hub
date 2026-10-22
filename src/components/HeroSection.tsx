@@ -36,18 +36,18 @@ const HeroSection = () => {
           {/* Title with typing effect */}
           <div className="mb-8 opacity-0 animate-fade-in-up stagger-3">
             <p className="text-xl sm:text-2xl md:text-3xl font-mono text-muted-foreground">
-              <span className="text-primary">{'>'}</span> Embedded Systems
-              <span className="text-secondary"> & </span>
-              Robotics Engineer
+              <span className="text-primary">{'>'}</span> Electronic and Embedded Systems Engineer
+              {/* <span className="text-secondary"> & </span>
+              Robotics Engineer */}
             </p>
           </div>
 
           {/* Description */}
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed opacity-0 animate-fade-in-up stagger-4">
-            Final year undergraduate at the University of Moratuwa, specializing in 
+            Electronic Test Development Engineer and Graduate at Department of Electronic and Telecommunication Engineering at University of Moratuwa, specializing in 
             <span className="text-primary"> Embedded Systems</span>, 
             <span className="text-primary"> IoT</span>, and 
-            <span className="text-primary"> Robotics</span>. 
+            <span className="text-primary"> Electronics</span>. 
             Building real hardware solutions with microcontrollers, sensors, and custom PCB designs.
           </p>
 
